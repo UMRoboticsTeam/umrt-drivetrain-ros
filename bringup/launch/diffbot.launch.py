@@ -61,7 +61,7 @@ def generate_launch_description():
 
     robot_controllers = PathJoinSubstitution(
         [
-            FindPackageShare("ros2_control_demo_example_2"),
+            FindPackageShare("umrt-drivetrain-ros"),
             "config",
             "diffbot_controllers.yaml",
         ]

@@ -1,5 +1,5 @@
-# UMRT ROS Template
-ROS project repository template for the University of Manitoba Robotics Team.
+# UMRT Drivetrain ROS2 Package
+ROS2 Drivetrain Package for the University of Manitoba Robotics Team.
 
 New projects should be **forked** from this repo (not using this as a template, as that prevents template changes from
 trickling down). Each new project must:
@@ -17,9 +17,9 @@ trickling down). Each new project must:
 9. Replace example files with real code, add source files to CMake targets, document it with Doxygen, and proceed
 
 ---
-# Project Name
+# umrt-drivetrain-ros
 
-This library/executable/project implements XYZ functionality for the University of Manitoba Robotics Team's 
+This library/executable/project implements drivetrain functionality for the University of Manitoba Robotics Team's 
 rover/robotic arm.
 
-[See the documentation](https://umroboticsteam.github.io/********** project-name **********/)
+[See the documentation](https://umroboticsteam.github.io/umrt-drivetrain-ros/)
