@@ -6,7 +6,7 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
 
-    package_name = "ros2_control_demo_example_2"
+    package_name = "umrt-drivetrain-ros"
 
     joy_params = os.path.join(get_package_share_directory(package_name),'config','joystick.yaml')
 
