@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 # set(CMAKE_CXX_STANDARD_REQUIRED On)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
-  add_compile_options(-Wall -Wextra)
+  add_compile_options(-Wall -Wextra -fPIC)
 endif()
 
 # find dependencies
@@ -39,26 +39,26 @@ install(
 
 ## COMPILE
 add_library(
-  umrt-drivetrain-ros
+  ${PROJECT_NAME} 
   SHARED
   hardware/diffbot_system.cpp
   hardware/I2CPeripheral.cpp
   hardware/PCA9685.cpp
 )
 
-target_compile_features(umrt-drivetrain-ros PUBLIC cxx_std_17)
-target_include_directories(umrt-drivetrain-ros PUBLIC
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+target_include_directories(${PROJECT_NAME} PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/hardware/include>
-$<INSTALL_INTERFACE:include/umrt-drivetrain-ros>
+$<INSTALL_INTERFACE:include/${PROJECT_NAME} >
 )
 
-target_link_libraries(umrt-drivetrain-ros
+target_link_libraries(${PROJECT_NAME} 
         PUBLIC
-        $(THIS_PACKAGE_INCLUDE_DEPENDS)
+        ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 
 ament_target_dependencies(
-  umrt-driverain-ros PUBLIC
+  ${PROJECT_NAME} PUBLIC
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 
@@ -87,17 +87,17 @@ configure_file(
 # INSTALL
 install(
   DIRECTORY hardware/include/
-  DESTINATION include/umrt-drivetrain-ros
+  DESTINATION include/${PROJECT_NAME} 
 )
 install(
   DIRECTORY description/launch description/ros2_control description/urdf
-  DESTINATION share/umrt-drivetrain-ros
+  DESTINATION share/${PROJECT_NAME} 
 )
 install(
   DIRECTORY bringup/launch bringup/config
-  DESTINATION share/umrt-drivetrain-ros
+  DESTINATION share/${PROJECT_NAME} 
 )
-install(TARGETS umrt-drivetrain-ros
+install(TARGETS ${PROJECT_NAME}
   EXPORT export_umrt-drivetrain-ros
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
