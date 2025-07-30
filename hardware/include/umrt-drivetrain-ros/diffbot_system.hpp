@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef UMRT_DRIVETRAIN_ROS__DIFFBOT_SYSTEM_HPP_
-#define UMRT_DRIVETRAIN_ROS__DIFFBOT_SYSTEM_HPP_
+#ifndef UMRT_DRIVETRAIN_ROS_DIFFBOT_SYSTEM_HPP_
+#define UMRT_DRIVETRAIN_ROS_DIFFBOT_SYSTEM_HPP_
 
 #include <memory>
 #include <string>
@@ -103,4 +103,4 @@ private:
 
 }  // namespace umrt_drivetrain_ros
 
-#endif  // UMRT_DRIVETRAIN_ROS__DIFFBOT_SYSTEM_HPP_
+#endif  // UMRT_DRIVETRAIN_ROS_DIFFBOT_SYSTEM_HPP_

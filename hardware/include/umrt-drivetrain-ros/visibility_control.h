@@ -19,8 +19,8 @@
  * library cannot have, but the consuming code must have inorder to link.
  */
 
-#ifndef UMRT_DRIVETRAIN_ROS__VISIBILITY_CONTROL_H_
-#define UMRT_DRIVETRAIN_ROS__VISIBILITY_CONTROL_H_
+#ifndef UMRT_DRIVETRAIN_ROS_VISIBILITY_CONTROL_H_
+#define UMRT_DRIVETRAIN_ROS_VISIBILITY_CONTROL_H_
 
 // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
 //     https://gcc.gnu.org/wiki/Visibility

@@ -41,20 +41,20 @@ add_library(
   ${PROJECT_NAME} 
   SHARED
   hardware/diffbot_system.cpp
-  hardware/I2CPeripheral.cpp
-  hardware/PCA9685.cpp
+  # hardware/I2CPeripheral.cpp
+  # hardware/PCA9685.cpp
 )
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_include_directories(${PROJECT_NAME} PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/hardware/include>
-$<INSTALL_INTERFACE:include/${PROJECT_NAME} >
+$<INSTALL_INTERFACE:include/umrt-drivetrain-ros>
 )
-
-target_link_libraries(${PROJECT_NAME} 
-        PUBLIC
-        i2c
-)
+ 
+# target_link_libraries(${PROJECT_NAME} 
+#         PUBLIC
+#         i2c
+# )
 
 ament_target_dependencies(
   ${PROJECT_NAME} PUBLIC
