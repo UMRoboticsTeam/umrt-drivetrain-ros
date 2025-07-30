@@ -31,7 +31,7 @@
 
 #define PWM_FREQUENCY 50 // Hz, 20 ms period. -njreichert
 
-namespace ros2_control_demo_example_2
+namespace umrt_drivetrain_ros
 {
 hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   const hardware_interface::HardwareInfo & info)
@@ -240,7 +240,7 @@ hardware_interface::return_type DiffBotSystemHardware::read(
    * 3) Constants are in SI units always
    */
 
-hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardware::set_can_wheel_speed(int channel, double v_linear_mps) {
+hardware_interface::return_type umrt_drivetrain_ros::DiffBotSystemHardware::set_can_wheel_speed(int channel, double v_linear_mps) {
 
   //float wheel_radius = 0.1;
   //SHUT UP COLCON!!!
@@ -288,7 +288,7 @@ hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardwa
 }
 
 /*
-hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardware::set_pwm_wheel_speed(
+hardware_interface::return_type umrt_drivetrain_ros::DiffBotSystemHardware::set_pwm_wheel_speed(
   int channel, double angular_speed)
 {
   // Between -1 and 1 m/s by definition in diffbot_controllers.yaml.
@@ -339,7 +339,7 @@ hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardwa
   return hardware_interface::return_type::OK;
 }
 */
-hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardware::try_to_reset_wheels() {
+hardware_interface::return_type umrt_drivetrain_ros::DiffBotSystemHardware::try_to_reset_wheels() {
 
   bool pwm_driver_unreachable = false;
 
@@ -360,7 +360,7 @@ hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardwa
   
 }
 
-hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardware::write(
+hardware_interface::return_type umrt_drivetrain_ros::DiffBotSystemHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   bool pwm_driver_unreachable = false;
@@ -388,7 +388,7 @@ hardware_interface::return_type ros2_control_demo_example_2::DiffBotSystemHardwa
 // 
 // If we cannot reset it, we have no option but to kill the program. -njreichert
 //
-hardware_interface::CallbackReturn ros2_control_demo_example_2::DiffBotSystemHardware::on_error(
+hardware_interface::CallbackReturn umrt_drivetrain_ros::DiffBotSystemHardware::on_error(
   [[maybe_unused]] const rclcpp_lifecycle::State &previous_state)
 {
   if (try_to_reset_wheels() == hardware_interface::return_type::OK)
@@ -402,8 +402,8 @@ hardware_interface::CallbackReturn ros2_control_demo_example_2::DiffBotSystemHar
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 
-}  // namespace ros2_control_demo_example_2
+}  // namespace umrt_drivetrain_ros
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(
-  ros2_control_demo_example_2::DiffBotSystemHardware, hardware_interface::SystemInterface)
+  umrt_drivetrain_ros::DiffBotSystemHardware, hardware_interface::SystemInterface)

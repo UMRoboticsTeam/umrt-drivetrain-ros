@@ -17,7 +17,6 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   rclcpp
   rclcpp_lifecycle
   ros2_socketcan
-  ament_cmake
 )
 
 # find dependencies
@@ -54,7 +53,7 @@ $<INSTALL_INTERFACE:include/${PROJECT_NAME} >
 
 target_link_libraries(${PROJECT_NAME} 
         PUBLIC
-        ${THIS_PACKAGE_INCLUDE_DEPENDS}
+        i2c
 )
 
 ament_target_dependencies(

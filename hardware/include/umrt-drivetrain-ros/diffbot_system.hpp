@@ -42,7 +42,7 @@
 // See wiki.ros.org/diff_drive_controller Section 1.4. -njreichert
 // #define WHEEL_RADIUS 0.1143 // m
 
-namespace ros2_control_demo_example_2
+namespace umrt_drivetrain_ros
 {
 class DiffBotSystemHardware : public hardware_interface::SystemInterface
 {
@@ -101,6 +101,6 @@ private:
 
 };
 
-}  // namespace ros2_control_demo_example_2
+}  // namespace umrt_drivetrain_ros
 
 #endif  // UMRT_DRIVETRAIN_ROS__DIFFBOT_SYSTEM_HPP_
