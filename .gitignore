@@ -1,5 +1,5 @@
 /cmake-build-*/
 /.idea/
 /output-doxygen/
-# We ignore package.xml because it is generated from package.in.xml
-package.xml
+# We ignore package.xml because it is generated from package.in.xml - not in this case since we have package.xml in ros2_control_demo_descriptions
+# package.xml
